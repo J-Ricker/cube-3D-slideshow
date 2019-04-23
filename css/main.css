@@ -6,7 +6,8 @@
 .container {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.8)), url('../images/bg.jpg') no-repeat cover;
+    background: linear-gradient(rgba(0, 0, 0, .6), rgba(0,0,0,.8)), url('../images/bg.jpg') no-repeat;
+    background-size: cover;
 }
 
 .viewport {
@@ -17,6 +18,18 @@
     left: 50%;
     transform: translate(-50%, -50%);
     perspective: 1300px;
+}
+
+.viewport::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 20%;
+    background-color: #111;
+    z-index: -1;
+    top: 140%;
+    left: -10%;
+    filter: blur(50px);
 }
 
 .cube {
@@ -122,4 +135,40 @@
     height: 42vw;
     background-color: #111;
     transform: translateY(-14vw) rotateX(-90deg);
+}
+
+.control {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    background-color: rgba(59, 52, 50, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    z-index: 100;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.control:hover {
+    background-color: rgba(42,38,36.8);
+}
+
+.left-arrow {
+    top: 50%;
+    left: -35%;
+}
+
+.right-arrow {
+    top: 50%;
+    left: 135%;
+}
+
+.play-pause {
+    top: 140%;
+    left: 120%;
 }
