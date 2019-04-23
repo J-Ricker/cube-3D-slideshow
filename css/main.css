@@ -37,7 +37,6 @@
     height: 33.3333333%;
     transform-style: preserve-3d;
     position: relative;
-    transform: rotateY(0deg);
 }
 
 .cube-2 {
